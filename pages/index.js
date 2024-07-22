@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Script from "next/script";
+import {Analytics} from "@vercel/analytics/react"
 
 const SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY;
 
@@ -121,6 +122,7 @@ export default function Home() {
                             disabled={!name || !email || processing}
                         />
                     </div>
+                    <Analytics/>
                 </form>
 
                 <DisplayResult result={result}/>
